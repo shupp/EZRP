@@ -32,6 +32,7 @@ class EZRP
 
     public function verify(array $options = array())
     {
+        return $this->driver->verify($options);
     }
 
     public function getDriver($driver, array $options)
