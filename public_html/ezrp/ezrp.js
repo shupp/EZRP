@@ -26,10 +26,25 @@ function ezrpInit() {
             popup = openPopup(500,500);
 
             popup.window.location = spinnerURL + '?service=google';
+            $.ajax({
+                type: 'POST',
+                url: prepareURL,
+                data: "ezrpd=google",
+                success: function(data) {
+                    response = $.parseJSON(data);
+                    if (response.success) {
+                        popup.window.location = response.url;
+                    } else {
+                        alert('failed to log in with google ' + response.message);
+                    }
+                },
+                failure: function(data) {
+                    alert('failed to log in with google');
+                },
+            });
 
-            // e.stopPropagation();
-            // e.preventDefault();
-
+            e.stopPropagation();
+            e.preventDefault();
         });
 
          $('a.yahoo-auth').click(function(e) {

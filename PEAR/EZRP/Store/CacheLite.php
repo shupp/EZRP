@@ -16,6 +16,7 @@
 require_once 'EZRP/Exception.php';
 require_once 'EZRP/Store/Interface.php';
 require_once 'OpenID/Store/CacheLite.php';
+require_once 'OpenID.php';
 require_once 'HTTP/OAuth/Store/Consumer/CacheLite.php';
 
 /**
@@ -55,6 +56,7 @@ class EZRP_Store_CacheLite implements EZRP_Store_Interface
     {
         if ($this->openid === null) {
             $this->openid = new OpenID_Store_CacheLite();
+            OpenID::setStore($this->openid);
         }
         return $this->openid;
     }
