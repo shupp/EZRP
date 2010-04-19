@@ -7,28 +7,8 @@ require_once 'Net/URL2.php';
 class EZRP_OpenID extends EZRP_Common
 {
     protected $driver = 'openid';
-    protected $realm = null;
-    protected $returnTo = null;
     protected $identifier = null;
-    protected $ezrpPath = '/ezrp';
     protected $assertedID = null;
-
-    public function init(array $options)
-    {
-        // openid realm
-        if (isset($options['realm'])) {
-            $this->realm = $options['realm'];
-        } else {
-            $this->realm = 'http://' . $_SERVER['SERVER_NAME'];
-        }
-
-        if (isset($options['ezrpPath'])) {
-            $this->ezrpPath = $options['ezrpPath'];
-        }
-
-        $this->returnTo = rtrim($this->realm, '/') . $this->ezrpPath
-                          . '/verify.php?ezrpd=' . $this->driver;
-    }
 
     public function prepare(array $options = array())
     {
@@ -94,8 +74,8 @@ class EZRP_OpenID extends EZRP_Common
     protected function getORPInstance()
     {
         // @codeCoverageIgnoreStart
-        return new OpenID_RelyingParty($this->returnTo,
-                                       $this->realm,
+        return new OpenID_RelyingParty($this->verifyURL,
+                                       $this->baseURL,
                                        $this->identifier);
         // @codeCoverageIgnoreEnd
     }

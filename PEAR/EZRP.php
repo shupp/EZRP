@@ -27,11 +27,13 @@ class EZRP
 
     public function prepare(array $options = array())
     {
+        $this->getStore();
         return $this->driver->prepare($options);
     }
 
     public function verify(array $options = array())
     {
+        $this->getStore();
         return $this->driver->verify($options);
     }
 

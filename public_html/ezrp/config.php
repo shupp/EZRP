@@ -1,10 +1,16 @@
 <?php
 
-ini_set('include_path', dirname(__FILE__) . '/../../PEAR:/Users/bill/git/HTTP_OAuth:' . get_include_path());
+ini_set('include_path', dirname(__FILE__) . '/../../PEAR:' . get_include_path());
 require_once 'EZRP.php';
+session_start();
 
 $configOptions = array(
-    'real' => 'ezrp.local'
+    'baseURL'   => 'http://ezrp.local',
+    'sessionID' => session_id(),
+    'twitter'   => array(
+        'key'    => 'njcJd2TnApObgVtutSCTpQ',
+        'secret' => 'eF5NMtqAjPzd9rvPQWRIbbBTGx8qo6woXuyJy8cQBDs',
+    )
 );
 
 $services = array(

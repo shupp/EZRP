@@ -65,8 +65,25 @@ function ezrpInit() {
 
             popup.window.location = spinnerURL + '?service=twitter';
 
-            // e.stopPropagation();
-            // e.preventDefault();
+            $.ajax({
+                type: 'POST',
+                url: prepareURL,
+                data: "ezrpd=twitter",
+                success: function(data) {
+                    response = $.parseJSON(data);
+                    if (response.success) {
+                        popup.window.location = response.url;
+                    } else {
+                        alert('failed to log in with twitter ' + response.message);
+                    }
+                },
+                failure: function(data) {
+                    alert('failed to log in with twitter');
+                },
+            });
+
+            e.stopPropagation();
+            e.preventDefault();
 
         });
 
