@@ -60,8 +60,8 @@ class EZRP_OpenID extends EZRP_Common
     {
         if (isset($options['openid-identifier'])) {
             $this->identifier = $options['openid-identier'];
-        } else if (isset($_POST['openid-identifier'])) {
-            $this->identifier = $_POST['openid-identier'];
+        } else if (isset($_POST['ezrp-openid-identifier'])) {
+            $this->identifier = $_POST['ezrp-openid-identifier'];
         }
         return $this;
     }

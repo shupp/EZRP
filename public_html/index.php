@@ -20,6 +20,9 @@ google.setOnLoadCallback(function() {
         <li class="ezrp-twitter">Twitter
         <li class="ezrp-google">Google
         <li class="ezrp-openid">OpenID
+                                <div class="ezrp-openid-form" style="display: none;">
+                                OpenID Identifier: <input type="text" id="ezrp-openid-identifier">
+                                <input type="submit" id="ezrp-openid-submit" value="login">
     </ul>
 </div>
 </body>

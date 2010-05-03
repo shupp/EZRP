@@ -92,7 +92,12 @@ class EZRP_Twitter extends EZRP_Common
         } catch (HTTP_OAuth_Exception $e) {
             throw new Exception('Twitter login failed');
         }
-        return array($this->twitterID, $this->twitterScreenName);
+        return array(
+            $this->twitterID,
+            $this->twitterScreenName,
+            $this->accessToken,
+            $this->accessTokenSecret,
+        );
     }
     public function getProfileData(array $options)
     {

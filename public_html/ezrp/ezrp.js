@@ -58,7 +58,7 @@ function ezrpInit() {
             // e.preventDefault();
         });
 
-         $('li.ezrp-twitter').click(function(e) {
+        $('li.ezrp-twitter').click(function(e) {
 
             popup && !popup.closed && popup.close();
             popup = openPopup(800,370);
@@ -85,6 +85,39 @@ function ezrpInit() {
             e.stopPropagation();
             e.preventDefault();
 
+        });
+
+        $('li.ezrp-openid').click(function(e) {
+            $('.ezrp-openid-form').show();
+            e.stopPropagation();
+            e.preventDefault();
+        });
+
+        $('#ezrp-openid-submit').click(function(e) {
+
+            popup && !popup.closed && popup.close();
+            popup = openPopup(500,500);
+
+            popup.window.location = spinnerURL + '?service=openid';
+            $.ajax({
+                type: 'POST',
+                url: prepareURL,
+                data: "ezrpd=openid&ezrp-openid-identifier=" + $("#ezrp-openid-identifier").val(),
+                success: function(data) {
+                    response = $.parseJSON(data);
+                    if (response.success) {
+                        popup.window.location = response.url;
+                    } else {
+                        alert('failed to log in with openid ' + response.message);
+                    }
+                },
+                failure: function(data) {
+                    alert('failed to log in with openid');
+                },
+            });
+
+            e.stopPropagation();
+            e.preventDefault();
         });
 
         function checkPopup(url) {
