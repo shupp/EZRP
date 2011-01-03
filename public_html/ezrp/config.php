@@ -1,6 +1,6 @@
 <?php
 
-ini_set('include_path', dirname(__FILE__) . '/../../PEAR:' . get_include_path());
+ini_set('include_path', dirname(__FILE__) . '/../..:' . get_include_path());
 require_once 'EZRP.php';
 session_start();
 
