@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.9.1" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+    http://pear.php.net/dtd/tasks-1.0.xsd
+    http://pear.php.net/dtd/package-2.0
+    http://pear.php.net/dtd/package-2.0.xsd">
+ <name>EZRP</name>
+ <channel>shupp.github.com/pirum</channel>
+ <summary>PHP interface for handling OAuth, OpenID, and Facebook connections consistently</summary>
+ <description>See ezrp.me for details</description>
+ <lead>
+  <name>Bill Shupp</name>
+  <user>shupp</user>
+  <email>shupp@php.net</email>
+  <active>yes</active>
+ </lead>
+ <date>2011-02-15</date>
+ <time>09:31:55</time>
+ <version>
+  <release>0.1.0</release>
+  <api>0.1.0</api>
+ </version>
+ <stability>
+  <release>alpha</release>
+  <api>alpha</api>
+ </stability>
+ <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
+ <notes>
+* Initial release
+ </notes>
+ <contents>
+  <dir baseinstalldir="/" name="/">
+   <dir name="doc">
+    <file name="notes" role="doc" />
+   </dir> <!-- /doc -->
+   <dir name="EZRP">
+    <dir name="Store">
+     <file name="CacheLite.php" role="php" />
+     <file name="Interface.php" role="php" />
+    </dir> <!-- /EZRP/Store -->
+    <file name="Common.php" role="php" />
+    <file name="Exception.php" role="php" />
+    <file name="Google.php" role="php" />
+    <file name="Interface.php" role="php" />
+    <file name="OpenID.php" role="php" />
+    <file name="Twitter.php" role="php" />
+   </dir> <!-- /EZRP -->
+   <dir name="public_html">
+    <dir name="ezrp">
+     <file name="config.php" role="doc" />
+     <file name="ezrp.js" role="doc" />
+     <file name="prepare.php" role="doc" />
+     <file name="spinner.gif" role="doc" />
+     <file name="spinner.php" role="doc" />
+     <file name="verify.php" role="doc" />
+    </dir> <!-- /public_html/ezrp -->
+    <file name="index.php" role="doc" />
+   </dir> <!-- /public_html -->
+   <file name="EZRP.php" role="php" />
+  </dir> <!-- / -->
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.1.2</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.0b1</min>
+   </pearinstaller>
+   <package>
+    <name>HTTP_OAuth</name>
+    <channel>pear.php.net</channel>
+    <min>0.2.2</min>
+   </package>
+   <package>
+    <name>OpenID</name>
+    <channel>pear.php.net</channel>
+    <min>0.3.0</min>
+   </package>
+   <package>
+    <name>Net_URL2</name>
+    <channel>pear.php.net</channel>
+    <min>0.2.0</min>
+   </package>
+   <package>
+    <name>Cache_Lite</name>
+    <channel>pear.php.net</channel>
+   </package>
+  </required>
+ </dependencies>
+ <phprelease />
+ <changelog>
+  <release>
+   <version>
+    <release>0.1.0</release>
+    <api>0.1.0</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <date>2011-02-15</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
+   <notes>
+* Initial release
+   </notes>
+  </release>
+ </changelog>
+</package>
