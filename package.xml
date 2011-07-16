@@ -14,7 +14,7 @@
   <active>yes</active>
  </lead>
  <date>2011-07-16</date>
- <time>10:47:57</time>
+ <time>10:50:15</time>
  <version>
   <release>0.1.0</release>
   <api>0.1.0</api>
@@ -71,7 +71,7 @@
    <package>
     <name>HTTP_OAuth</name>
     <channel>pear.php.net</channel>
-    <min>0.2.2</min>
+    <min>0.2.3</min>
    </package>
    <package>
     <name>OpenID</name>
