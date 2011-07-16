@@ -8,7 +8,7 @@ abstract class EZRP_Common
     protected $ezrp = null;
     protected $baseURL = '';
     protected $identifier = null;
-    protected $ezrpPath = '/ezrp';
+    protected $ezrpPath = '/ezrp/verify.php';
     protected $verifyURL = null;
     protected $sessionID = null;
 
@@ -28,8 +28,9 @@ abstract class EZRP_Common
 
         $this->sessionID = $options['sessionID'];
 
-        $this->verifyURL = rtrim($this->baseURL, '/') . $this->ezrpPath
-                          . '/verify.php?ezrpd=' . $this->driver;
+        $verifyURL = new Net_URL2(rtrim($this->baseURL, '/') . $this->ezrpPath);
+        $verifyURL->setQueryVariable('ezrpd', $this->driver);
+        $this->verifyURL = $verifyURL->getURL();
     }
 
     public function __construct(EZRP $ezrp, array $options)
