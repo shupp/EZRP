@@ -34,7 +34,9 @@ $packagexml->setReleaseStability('alpha');
 $packagexml->setAPIStability('alpha');
 
 $packagexml->setNotes('
-* Initial release
+* Fixed ezrpPath to be more flexible
+* Updated dependencies to get other bug fixes
+* Tagged 0.1.0 release
 ');
 $packagexml->setPackageType('php');
 $packagexml->addRelease();
@@ -51,7 +53,7 @@ $packagexml->setLicense('New BSD License',
 $packagexml->setPhpDep('5.1.2');
 $packagexml->setPearinstallerDep('1.4.0b1');
 $packagexml->addPackageDepWithChannel('required', 'HTTP_OAuth', 'pear.php.net', '0.2.2');
-$packagexml->addPackageDepWithChannel('required', 'OpenID', 'pear.php.net', '0.3.0');
+$packagexml->addPackageDepWithChannel('required', 'OpenID', 'pear.php.net', '0.3.2');
 $packagexml->addPackageDepWithChannel('required', 'Net_URL2', 'pear.php.net', '0.2.0');
 $packagexml->addPackageDepWithChannel('required', 'Cache_Lite', 'pear.php.net');
 
