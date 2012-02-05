@@ -97,6 +97,12 @@ class EZRP
         return $this->driver->prepare($options);
     }
 
+    public function getProfileData(array $options = array())
+    {
+        $this->getStore();
+        return $this->driver->getProfileData($options);
+    }
+
     /**
      * Verification step for the auth driver.  Returns an array currenty, which
      * sucks.

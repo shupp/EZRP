@@ -26,17 +26,17 @@ $packagexml->setSummary('PHP interface for handling OAuth, OpenID, and Facebook 
 $packagexml->setDescription('See ezrp.me for details');
 
 $packagexml->setChannel('shupp.github.com/pirum');
-$packagexml->setAPIVersion('0.1.0');
-$packagexml->setReleaseVersion('0.1.0');
+$packagexml->setAPIVersion('0.2.0');
+$packagexml->setReleaseVersion('0.2.0');
 
 $packagexml->setReleaseStability('alpha');
 
 $packagexml->setAPIStability('alpha');
 
 $packagexml->setNotes('
-* Fixed ezrpPath to be more flexible
-* Updated dependencies to get other bug fixes
-* Tagged 0.1.0 release
+* Added EZRP::getProfileData(), only the twitter driver is supported though
+* Updated twitter oauth url
+* Prepped 0.2.0 release
 ');
 $packagexml->setPackageType('php');
 $packagexml->addRelease();

@@ -33,7 +33,7 @@ class EZRP_Twitter extends EZRP_Common
                                                      $this->driver,
                                                      $this->sessionID);
 
-            return $this->consumer->getAuthorizeURL('http://twitter.com/oauth/authenticate');
+            return $this->consumer->getAuthorizeURL('https://api.twitter.com/oauth/authenticate');
         } catch (HTTP_OAuth_Exception $e) {
             throw new Exception('Could not obtain request token');
         }
@@ -101,6 +101,24 @@ class EZRP_Twitter extends EZRP_Common
     }
     public function getProfileData(array $options)
     {
+        try {
+            $twitter = new Services_Twitter();
+            $oauth   = new HTTP_OAuth_Consumer($this->key,
+                                               $this->secret,
+                                               $this->accessToken,
+                                               $this->accessTokenSecret);
+            $twitter->setOAuth($oauth);
+            $results = $twitter->users->show(array('user_id' => $this->twitterID));
+
+            $data = array();
+            $data['name']        = $results->name;
+            $data['username']    = $results->screen_name;
+            $data['description'] = $results->description;
+
+            return $data;
+        } catch (Services_Twitter_Exception $e) {
+            throw new EZRP_Exception('Error getting profile data', 0, $e);
+        }
     }
     public function getMap(array $options)
     {
