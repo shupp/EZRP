@@ -13,11 +13,11 @@
   <email>shupp@php.net</email>
   <active>yes</active>
  </lead>
- <date>2012-02-05</date>
- <time>11:57:31</time>
+ <date>2012-04-01</date>
+ <time>13:17:11</time>
  <version>
-  <release>0.2.0</release>
-  <api>0.2.0</api>
+  <release>0.2.1</release>
+  <api>0.2.1</api>
  </version>
  <stability>
   <release>alpha</release>
@@ -76,7 +76,7 @@
    <package>
     <name>OpenID</name>
     <channel>pear.php.net</channel>
-    <min>0.3.2</min>
+    <min>0.3.3</min>
    </package>
    <package>
     <name>Net_URL2</name>
@@ -118,6 +118,23 @@
     <api>alpha</api>
    </stability>
    <date>2012-02-05</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
+   <notes>
+* Added EZRP::getProfileData(), only the twitter driver is supported though
+* Updated twitter oauth url
+* Prepped 0.2.0 release
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>0.2.1</release>
+    <api>0.2.1</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <date>2012-04-01</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
    <notes>
 * Added EZRP::getProfileData(), only the twitter driver is supported though

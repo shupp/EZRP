@@ -26,8 +26,8 @@ $packagexml->setSummary('PHP interface for handling OAuth, OpenID, and Facebook 
 $packagexml->setDescription('See ezrp.me for details');
 
 $packagexml->setChannel('shupp.github.com/pirum');
-$packagexml->setAPIVersion('0.2.0');
-$packagexml->setReleaseVersion('0.2.0');
+$packagexml->setAPIVersion('0.2.1');
+$packagexml->setReleaseVersion('0.2.1');
 
 $packagexml->setReleaseStability('alpha');
 
@@ -53,7 +53,7 @@ $packagexml->setLicense('New BSD License',
 $packagexml->setPhpDep('5.1.2');
 $packagexml->setPearinstallerDep('1.4.0b1');
 $packagexml->addPackageDepWithChannel('required', 'HTTP_OAuth', 'pear.php.net', '0.2.3');
-$packagexml->addPackageDepWithChannel('required', 'OpenID', 'pear.php.net', '0.3.2');
+$packagexml->addPackageDepWithChannel('required', 'OpenID', 'pear.php.net', '0.3.3');
 $packagexml->addPackageDepWithChannel('required', 'Net_URL2', 'pear.php.net', '0.2.0');
 $packagexml->addPackageDepWithChannel('required', 'Cache_Lite', 'pear.php.net');
 
